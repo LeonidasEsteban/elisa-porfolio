@@ -8,13 +8,24 @@
 
 body {
   font-family: var(--font);
-  background: var(--gradient) ;
+  background: var(--gradient);
+  margin: 0;
+}
+.u-wrapper {
+  max-inline-size: 1232px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
 .h1 {
   font-size: 59px;
   line-height: 95px;
   font-weight: 700;
+  margin: 1rem 0;
+}
+
+.h1 span {
+  display: block;
 }
 
 .h3 {
@@ -29,8 +40,15 @@ body {
   block-size: 44px;
   text-align: center;
   line-height: 44px;
+  display: inline-flex;
+  align-items: center;
   border-radius: 4px;
+  justify-content: center;
   border: 2px solid var(--black);
+}
+
+.social-item + .social-item {
+  margin-left: 1em;
 }
 
 .social-item img {
@@ -44,7 +62,6 @@ body {
   background: initial;
   block-size: 50px;
   display: block;
-  width: 100%;
   box-sizing: border-box;
   font-size: 14px;
   text-transform: uppercase;
@@ -52,6 +69,10 @@ body {
   line-height: 50px;
   border: 2px solid var(--black);
   font-weight: bold;
+  padding: 0 1.5em;
+}
+.btn.full {
+  width: 100%;
 }
 
 .btn.primary {
@@ -74,3 +95,218 @@ body {
 .btn i img {
   vertical-align: middle;
 }
+
+.hero {
+  margin-block-end: 80px;
+}
+
+.hero-content {
+
+}
+.hero-content img{
+  display: block;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+
+
+.header {
+  padding: 1em 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-projects-content {
+  text-align: center;
+}
+
+.pre-projects-content p {
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 38px;
+  letter-spacing: 0.5%;
+}
+
+.pre-projects-content p + p {
+  font-weight: bold;
+}
+
+.project {
+  display: grid;
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-areas: "image" "description";
+}
+.project {
+}
+.project-image {
+  grid-area: image;
+  text-align: center;
+  margin-block-end: 1.5em;
+}
+.project-description {
+  grid-area: description;
+
+}
+.project img {
+  max-width: 100%;
+}
+
+.project-title {
+}
+.tag span {
+  padding: .5em;
+  background: var(--black);
+  color: var(--primary);
+  box-shadow: -4px 4px 0 white;
+}
+
+.project-copy {
+  line-height: 25px;
+  letter-spacing: .5%;
+  margin-block-start: 2em;
+}
+.project-cta {
+  margin-block-start: 1.5em;
+}
+.project-cta button + button {
+  margin-block-start: 1em;
+}
+
+
+.testimony {
+  padding: 1.5em;
+  border-radius: 1.5em;
+  backdrop-filter: blur(39.7657px);
+  background: rgba(255,255,255,.2);
+  border: 3.98px solid rgba(255,255,255,.4);
+}
+.testimony-image {
+  text-align: center;
+}
+.testimony-copy {
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.testimony-title {
+  font-size: 12px;
+  color: rgba(0,0,0,.4);
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+.project, .testimony {
+  margin-block: 2.5em;
+}
+
+.form {
+  max-inline-size: 550px;
+  margin: auto;
+}
+
+.form label {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: .5em;
+  padding-inline-start: .5em;
+}
+
+.form label span {
+  color: #DA1414;
+}
+
+.form input, .form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  padding: .8em;
+  border-radius: .5em;
+  border: 1px solid #858C94;
+}
+.form textarea {
+  margin-block-end: 2em;
+}
+
+input::-webkit-input-placeholder {
+  color: #0F0A0A88;
+}
+
+
+.contact {
+  margin-block-end: 5em;
+}
+
+.footer {
+  text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "description image";
+  }
+
+  .hero-description {
+    grid-area: description;
+  }
+
+  .hero-image {
+    grid-area: image;
+  }
+  .hero-image img {
+    inline-size: 500px;
+    margin-top: -50px;
+  }
+
+  .pre-projects-content {
+    max-inline-size: 900px;
+    margin: auto;
+  }
+
+  .project {
+    grid-template-areas: "description image";
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3em;
+  }
+  .project-cta {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .project-cta button + button {
+    margin: 0;
+  }
+
+  .testimony {
+    margin: auto;
+    padding: 5em;
+    text-align: center;
+  }
+  .testimony-copy {
+    font-size: 2.2em;
+    line-height: 55px;
+  }
+
+  .testimony-title {
+    font-size: 1.5em;
+  }
+  .project, .testimony {
+    margin-block: 5em;
+  }
+
+  .form .tag span {
+    display: block;
+    text-align: center;
+  }
+
+}
+
+
+
+
