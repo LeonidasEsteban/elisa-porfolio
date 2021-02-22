@@ -1,12 +1,13 @@
 
 :root {
+  --font: 'Oxygen', sans-serif;
   --primary: #42E2B8;
   --gradient: linear-gradient(135deg, #FAD7A1 0%, #E96D71 100%);
   --black: black;
 }
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: var(--font);
   background: var(--gradient) ;
 }
 
@@ -33,5 +34,43 @@ body {
 }
 
 .social-item img {
+  vertical-align: middle;
+}
+
+.btn {
+  /* font-family: var(--font); */
+  border-radius: 90px;
+  letter-spacing: 1.25px;
+  background: initial;
+  block-size: 50px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  border: 2px solid var(--black);
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: var(--primary);
+}
+
+.btn.secondary {
+}
+
+.btn.secondary img{
+  position: relative;
+  bottom: 1px;
+}
+.btn i {
+  display: inline-block;
+}
+.btn span {
+  vertical-align: middle;
+}
+.btn i img {
   vertical-align: middle;
 }
