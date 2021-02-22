@@ -1,0 +1,37 @@
+
+:root {
+  --primary: #42E2B8;
+  --gradient: linear-gradient(135deg, #FAD7A1 0%, #E96D71 100%);
+  --black: black;
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  background: var(--gradient) ;
+}
+
+.h1 {
+  font-size: 59px;
+  line-height: 95px;
+  font-weight: 700;
+}
+
+.h3 {
+  font-size: 48px;
+  line-height: 77px;
+}
+
+.social-item {
+  background: var(--primary);
+  display: inline-block;
+  inline-size: 44px;
+  block-size: 44px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 4px;
+  border: 2px solid var(--black);
+}
+
+.social-item img {
+  vertical-align: middle;
+}
