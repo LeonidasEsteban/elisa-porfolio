@@ -229,6 +229,7 @@ body {
 }
 .form textarea {
   margin-block-end: 2em;
+  font-family: inherit;
 }
 
 input::-webkit-input-placeholder {
@@ -244,6 +245,9 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
+#trucazo {
+  opacity: 0;
+}
 
 @media screen and (min-width: 768px) {
   .hero-content {

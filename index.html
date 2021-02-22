@@ -186,16 +186,17 @@
     <div class="u-wrapper">
       <div class="contact-content">
 
-        <form action="" class="form">
+        <form id="form" action="" class="form">
           <h3 class="tag"><span>HABLEMOS</span></h3>
           <label for="name">Nombre Completo <span>*</span></label>
-          <input required type="text" id="name" placeholder="Juan">
+          <input name="name" required type="text" id="name" placeholder="Juan">
           <label for="email">Correo electrónico <span>*</span></label>
-          <input type="text" id="email" required placeholder="juan@gmail.com">
+          <input name="email" type="text" id="email" required placeholder="juan@gmail.com">
           <label for="message">Mensaje</label>
-          <textarea id="message" name="" id="" cols="30" rows="10"></textarea>
+          <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
           <button type="submit" class="btn primary full">enviar mensaje</button>
         </form>
+        <a href="mailto:me@leonidasesteban.com" id="trucazo">jojojoj</a>
       </div>
     </div>
   </section>
@@ -222,7 +223,16 @@
     </p>
 
   </footer>
-
+  <script>
+    const $form = document.querySelector('#form')
+    $form.addEventListener('submit', handleSubmit)
+    function handleSubmit(event) {
+      event.preventDefault()
+      const form = new FormData(this)
+      trucazo.setAttribute('href', `mailto:me@leonidasesteban.com?subject=${form.get('name')}${form.get('email')}&body=${form.get('message')}`)
+      trucazo.click()
+    }
+  </script>
 
 </body>
 </html>
