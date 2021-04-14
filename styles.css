@@ -62,6 +62,8 @@ body {
   background: initial;
   block-size: 50px;
   display: block;
+  cursor: pointer;
+  user-select: none;
   box-sizing: border-box;
   font-size: 14px;
   text-transform: uppercase;

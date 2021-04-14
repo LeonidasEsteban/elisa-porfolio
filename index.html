@@ -196,7 +196,7 @@
           <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
           <button type="submit" class="btn primary full">enviar mensaje</button>
         </form>
-        <a href="mailto:me@leonidasesteban.com" id="trucazo">jojojoj</a>
+        <a href="mailto:me@leonidasesteban.com" id="trucazo"></a>
       </div>
     </div>
   </section>
@@ -225,14 +225,19 @@
   </footer>
   <script>
     const $form = document.querySelector('#form')
+    const $buttonMailto = document.querySelector('#trucazo')
+
     $form.addEventListener('submit', handleSubmit)
+
     function handleSubmit(event) {
       event.preventDefault()
       const form = new FormData(this)
-      trucazo.setAttribute('href', `mailto:me@leonidasesteban.com?subject=${form.get('name')}${form.get('email')}&body=${form.get('message')}`)
-      trucazo.click()
+      $buttonMailto.setAttribute('href', `mailto:me@leonidasesteban.com?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('message')}`)
+      $buttonMailto.click()
     }
   </script>
+
+
 
 </body>
 </html>
