@@ -186,7 +186,7 @@
     <div class="u-wrapper">
       <div class="contact-content">
 
-        <form id="form" action="" class="form">
+        <form id="form" class="form" action="https://formspree.io/f/xayayrav" method="POST">
           <h3 class="tag"><span>HABLEMOS</span></h3>
           <label for="name">Nombre Completo <span>*</span></label>
           <input name="name" required type="text" id="name" placeholder="Juan">
@@ -196,7 +196,7 @@
           <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
           <button type="submit" class="btn primary full">enviar mensaje</button>
         </form>
-        <a href="mailto:me@leonidasesteban.com" id="trucazo">jojojoj</a>
+
       </div>
     </div>
   </section>
@@ -223,16 +223,29 @@
     </p>
 
   </footer>
+
   <script>
     const $form = document.querySelector('#form')
+
     $form.addEventListener('submit', handleSubmit)
-    function handleSubmit(event) {
+
+    async function handleSubmit(event) {
       event.preventDefault()
       const form = new FormData(this)
-      trucazo.setAttribute('href', `mailto:me@leonidasesteban.com?subject=${form.get('name')}${form.get('email')}&body=${form.get('message')}`)
-      trucazo.click()
+      const response = await fetch(this.action, {
+        method: this.method,
+        body: form,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      if (response.ok) {
+        this.reset()
+        alert('Gracias por contactarme, te escribiré pronto :)')
+      }
     }
   </script>
+
 
 </body>
 </html>
